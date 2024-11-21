@@ -1,2 +1,3 @@
 #!/bin/bash
-pm2 stop /var/www/myapp/server.js
+echo "Stopping the server..."
+pm2 stop myapp || true

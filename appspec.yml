@@ -1,9 +1,12 @@
 version: 0.0
 os: linux
 files:
-  - source: /build
+  - source: /
     destination: /var/www/myapp
 hooks:
+  BeforeInstall:
+    - location: scripts/stop_server.sh
+      timeout: 300
   AfterInstall:
     - location: scripts/install_dependencies.sh
       timeout: 300
@@ -12,7 +15,4 @@ hooks:
       timeout: 300
   ApplicationStop:
     - location: scripts/stop_server.sh
-      timeout: 300
-  BeforeInstall:
-    - location: scripts/restart_server.sh
       timeout: 300

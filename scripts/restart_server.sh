@@ -1,2 +1,3 @@
 #!/bin/bash
-pm2 restart /var/www/myapp/server.js
+echo "Restarting the server..."
+pm2 restart myapp || true

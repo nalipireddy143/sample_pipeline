@@ -7,11 +7,11 @@ phases:
       - npm install
   build:
     commands:
-      - echo "Building the application..."
+      - echo "Building the React application..."
       - npm run build
   post_build:
     commands:
-      - echo "Post-build tasks complete."
+      - echo "Build completed."
 
 artifacts:
   files:

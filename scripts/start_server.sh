@@ -1,2 +1,4 @@
 #!/bin/bash
-pm2 start /var/www/myapp/server.js
+echo "Starting the server..."
+cd /var/www/myapp
+pm2 start serve --name myapp -- -s build -l 3000
