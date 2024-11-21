@@ -7,24 +7,16 @@ phases:
     commands:
       - echo "Installing dependencies..."
       - npm install
-  pre_build:
-    commands:
-      - echo "Running lint checks..."
-      # Run lint but allow the build to continue even if linting fails
-      - npm run lint || echo "Linting errors detected. Proceeding with build."
   build:
     commands:
       - echo "Building the application..."
       - npm run build
   post_build:
     commands:
-      - echo "Post-build tasks..."
-      # Optional: Package the build artifacts
-      - zip -r app.zip .
-      - echo "Build artifacts zipped successfully."
+      - echo "Post-build tasks complete."
 
 artifacts:
   files:
-    - app.zip
+    - '**/*'
   discard-paths: yes
   base-directory: build
